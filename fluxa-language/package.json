@@ -1,0 +1,39 @@
+{
+  "name": "fluxa",
+  "displayName": "Fluxa Language Support",
+  "description": "Syntax highlighting and configuration for the Fluxa programming language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "fluxa",
+        "aliases": ["Fluxa", "fluxa"],
+        "extensions": [".fx"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fluxa",
+        "scopeName": "source.fluxa",
+        "path": "./syntaxes/fluxa.tmLanguage.json"
+      }
+    ]
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "vscode": "^1.1.37"
+  }
+}

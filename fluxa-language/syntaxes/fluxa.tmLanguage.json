@@ -1,6 +1,13 @@
 {
   "scopeName": "source.fluxa",
   "name": "Fluxa",
+  "begin": "\\b(?:def|func)\\b\\s+",
+    "end": "(?=\\s|\\()",
+    "beginCaptures": {
+      "0": {
+        "name": "keyword.control.fluxa"
+    }
+  },
   "patterns": [
     {
       "name": "entity.name.function.fluxa",

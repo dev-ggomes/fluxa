@@ -12,3 +12,12 @@ def func():
 "" # auto-closing não funcionou mas assumiu forma de texto
 /* */ # auto-closing não funcionou e nem assumiu forma de comentário
 # assumiu forma de comentário
+
+def # não aparece com outra cor
+return # aparece com outra cor
+if # aparece com a mesma cor do return
+else # aparece com a mesma cor do if e do return
+'texto' # aparece colorido
+"texto" # aparece colorido
+# comentários aparecem cinzentos e esbatidos
+

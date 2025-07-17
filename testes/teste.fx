@@ -12,4 +12,3 @@ def func():
 "" # auto-closing não funcionou mas assumiu forma de texto
 /* */ # auto-closing não funcionou e nem assumiu forma de comentário
 # assumiu forma de comentário
-

@@ -7,6 +7,10 @@
       "match": "\\b(let|print|if|else|elif|for|while|return|func|import|from|as)\\b"
     },
     {
+      "name": "keyword.declaration.function.fluxa",
+      "match": "\\b(def)\\b"
+    },
+    {
       "name": "constant.language.fluxa",
       "match": "\\b(true|false|null)\\b"
     },

@@ -18,8 +18,3 @@ ast = parser.parse()
 # Etapa 3: Mostrar AST
 for node in ast:
     print(node)
-
-# {
-#     "name": "keyword.declaration.function.fluxa",
-#     "match": "\\b(def|func)\\b"
-# },

@@ -1,25 +1,25 @@
 {
   "scopeName": "source.fluxa",
   "name": "Fluxa",
-  "begin": "\\b(?:def|func)\\b\\s+",
-    "end": "(?=\\s|\\()",
-    "beginCaptures": {
-      "0": {
-        "name": "keyword.control.fluxa"
-    }
-  },
   "patterns": [
     {
-      "name": "entity.name.function.fluxa",
-      "match": "\\b(?:def|func)\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
+      "begin": "\\b(?:def|func)\\b\\s+",
+      "end": "(?=\\s|\\()",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.fluxa"
+        }
+      },
+      "patterns": [
+        {
+          "name": "entity.name.function.fluxa",
+          "match": "\\b(?:def|func)\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
+        }
+      ]
     },
     {
       "name": "keyword.control.fluxa",
       "match": "\\b(let|print|if|else|elif|for|while|return|import|from|as)\\b"
-    },
-    {
-      "name": "keyword.declaration.function.fluxa",
-      "match": "\\b(def|func)\\b"
     },
     {
       "name": "constant.language.fluxa",

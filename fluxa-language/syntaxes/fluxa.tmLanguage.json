@@ -15,7 +15,7 @@
       "end": "(?=\\()"
     },
     {
-      "begin": "\\bfunc\\b\\s+([a-zA-Z_][a-zA-Z0-9_)*]",
+      "begin": "\\bfunc\\b\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
       "beginCaptures": {
         "0": {
           "name": "keyword.control.fluxa"

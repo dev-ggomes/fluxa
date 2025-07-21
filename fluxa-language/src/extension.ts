@@ -20,6 +20,58 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+	vscode.languages.registerCompletionItemProvider('fluxa', {
+		provideCompletionItems(document, position) {
+			const suggestions = [
+				{
+					label: 'print',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'print()',
+				},
+				{
+					label: 'func',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'func name() {\n\t$0\n}',
+				},
+				{
+					label: 'def',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'def name() {\n\t$0\n}',
+				},
+				{
+					label: 'if',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'if (condition) {\n\t$0\n}',
+				},
+				{
+					label: 'else',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'else {\n\t$0\n}',
+				},
+				{
+					label: 'for',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'for (variable in list) {\n\t$0\n}',
+				},
+				{
+					label: 'while',
+					kind: vscode.CompletionItemKind.Keyword,
+					insertText: 'while (condition) {\n\t$0\n}',
+				}
+			];
+
+			return suggestions.map(s => {
+				const item = {
+					label: s.label,
+					kind: s.kind,
+					insertText: new vscode.SnippetString(s.insertText),
+					insertTextFormat: 2 // Snippet format
+				};
+				return item as vscode.CompletionItem;
+			});
+		}
+	});
 }
 
 // This method is called when your extension is deactivated

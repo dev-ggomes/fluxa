@@ -20,4 +20,3 @@ else # aparece com a mesma cor do if e do return
 'texto' # aparece colorido
 "texto" # aparece colorido
 # comentários aparecem cinzentos e esbatidos
-

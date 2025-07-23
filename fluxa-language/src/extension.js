@@ -56,45 +56,17 @@ function activate(context) {
     vscode.languages.registerCompletionItemProvider('fluxa', {
         provideCompletionItems(document, position) {
             const suggestions = [
-                {
-                    label: 'print',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'print()',
-                },
-                {
-                    label: 'func',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'func name() {\n\t$0\n}',
-                },
-                {
-                    label: 'def',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'def name() {\n\t$0\n}',
-                },
-                {
-                    label: 'if',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'if (condition) {\n\t$0\n}',
-                },
-                {
-                    label: 'else',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'else {\n\t$0\n}',
-                },
-                {
-                    label: 'for',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'for (variable in list) {\n\t$0\n}',
-                },
-                {
-                    label: 'while',
-                    kind: vscode.CompletionItemKind.Keyword,
-                    insertText: 'while (condition) {\n\t$0\n}',
-                }
+                { label: 'print', snippet: 'print()' },
+                { label: 'func', snippet: 'func name() {\n\t\n}' },
+                { label: 'def', snippet: 'def name() {\n\t\n}' },
+                { label: 'if', snippet: 'if (/*condition*/) {\n\t\n}' },
+                { label: 'else', snippet: 'else {\n\t\n}' },
+                { label: 'for', snippet: 'for (/*item in list*/) {\n\t\n}' },
+                { label: 'while', snippet: 'while (/*condition*/) {\n\t\n}' },
             ];
             return suggestions.map(s => {
-                const item = new vscode.CompletionItem(s.label, s.kind);
-                item.insertText = new vscode.SnippetString(s.insertText);
+                const item = new vscode.CompletionItem(s.label, vscode.CompletionItemKind.Keyword);
+                item.insertText = s.snippet;
                 return item;
             });
         }

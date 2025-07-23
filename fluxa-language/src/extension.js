@@ -35,43 +35,24 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = __importStar(require("vscode"));
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 function activate(context) {
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "fluxa-language" is now active!');
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with registerCommand
-    // The commandId parameter must match the command field in package.json
     const disposable = vscode.commands.registerCommand('fluxa-language.helloWorld', () => {
-        // The code you place here will be executed every time your command is executed
-        // Display a message box to the user
         vscode.window.showInformationMessage('Hello World from fluxa-language!');
     });
     context.subscriptions.push(disposable);
-    vscode.languages.registerCompletionItemProvider('fluxa', {
-        provideCompletionItems(document, position) {
-            const suggestions = [
-                { label: 'print', snippet: 'print()' },
-                { label: 'func', snippet: 'func name() {\n\t\n}' },
-                { label: 'def', snippet: 'def name() {\n\t\n}' },
-                { label: 'if', snippet: 'if (/*condition*/) {\n\t\n}' },
-                { label: 'else', snippet: 'else {\n\t\n}' },
-                { label: 'for', snippet: 'for (/*item in list*/) {\n\t\n}' },
-                { label: 'while', snippet: 'while (/*condition*/) {\n\t\n}' },
-            ];
-            return suggestions.map(s => {
-                const item = new vscode.CompletionItem(s.label, vscode.CompletionItemKind.Keyword);
-                item.insertText = s.snippet;
+    const provider = vscode.languages.registerCompletionItemProvider('fluxa', {
+        provideCompletionItems(document, position, token, context) {
+            const keywords = ['print', 'func', 'def', 'if', 'else', 'for', 'while'];
+            return keywords.map(kw => {
+                const item = new vscode.CompletionItem(kw, vscode.CompletionItemKind.Keyword);
+                item.insertText = kw;
                 return item;
             });
         }
-    });
+    }, '', '.'); // Trigger em qualquer tecla
+    context.subscriptions.push(provider);
 }
-// This method is called when your extension is deactivated
 function deactivate() { }
 //# sourceMappingURL=extension.js.map

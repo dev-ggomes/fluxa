@@ -32,9 +32,6 @@
     ]
   },
   "main": "./out/extension.js",
-  "activationEvents": [
-    "onLanguage:fluxa"
-  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

@@ -93,12 +93,8 @@ function activate(context) {
                 }
             ];
             return suggestions.map(s => {
-                const item = {
-                    label: s.label,
-                    kind: s.kind,
-                    insertText: new vscode.SnippetString(s.insertText),
-                    insertTextFormat: 2 // Snippet format
-                };
+                const item = new vscode.CompletionItem(s.label, s.kind);
+                item.insertText = new vscode.SnippetString(s.insertText);
                 return item;
             });
         }

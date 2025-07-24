@@ -13,8 +13,8 @@
     "languages": [
       {
         "id": "fluxa",
-        "aliases": ["Fluxa"],
-        "extensions": [".fx"],
+        "aliases": ["Fluxa, fluxa"],
+        "extensions": [".flx"],
         "configuration": "./language-configuration.json"
       }
     ],

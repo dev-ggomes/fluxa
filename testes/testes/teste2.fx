@@ -1,6 +1,12 @@
 # teste de autocomplete
 
-
+def # funcionou
+else # funcionou
+for # funcionou
+func # funcionou
+if # funcionou
+print # funcionou
+while # funcionou
 
 # =================== PRÓXIMA COISA A DIZER AO CHAT ===================
 # Ainda não sei

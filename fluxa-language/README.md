@@ -1,4 +1,4 @@
-# fluxa-language README
+# Fluxa README
 
 This is the README for your extension "fluxa-language". After writing up a brief description, we recommend including the following sections.
 

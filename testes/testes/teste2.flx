@@ -9,6 +9,14 @@ print # funcionou
 while # funcionou
 
 # =================== PRÓXIMA COISA A DIZER A FAZER ===================
-# Não. Já testei o autocomplete e o highlightning e funcionou tudo, 
-# a linguagem também já foi assumida como "fluxa" com a extensão ".flx". 
-# Agora já podemos passar para a criação do logo da fluxa e para a criação do publisher!
+# corri o comando "vsce package" e apareceu isto: "$ vsce package
+# Executing prepublish script 'npm run vscode:prepublish'...
+#
+# > fluxa@0.0.1 vscode:prepublish
+# > npm run compile
+#
+#
+# > fluxa@0.0.1 compile
+# > tsc -p ./
+#
+#  ERROR  It seems the README.md still contains template text. Make sure to edit the README.md file before you package or publish your extension."

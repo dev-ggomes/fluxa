@@ -8,15 +8,7 @@ if # funcionou
 print # funcionou
 while # funcionou
 
-# =================== PRÓXIMA COISA A DIZER AO CHAT ===================
-# Ainda não sei
-
-# =================== OUTRA COISA PARA DIZER AO CHAT ====================
-# EXISTE OUTRA LINGUAGEM DE PROGRAMAÇÃO QUE ACABA EM .FX CHAMADA FLUX! PORQUÊ QUE NÃO ME DISSESTE BURRO DE MERDA?
-
-# =================== ISTO TAVA NO CÓDIGO =========================
-# ===/ --> NO `package.json` depois do `id` <-- /===
-# "aliases": [
-#     "Fluxa",
-#     "fluxa"
-# ],
+# =================== PRÓXIMA COISA A DIZER A FAZER ===================
+# Não. Já testei o autocomplete e o highlightning e funcionou tudo, 
+# a linguagem também já foi assumida como "fluxa" com a extensão ".flx". 
+# Agora já podemos passar para a criação do logo da fluxa e para a criação do publisher!

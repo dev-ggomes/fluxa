@@ -13,13 +13,8 @@
     "languages": [
       {
         "id": "fluxa",
-        "aliases": [
-          "Fluxa",
-          "fluxa"
-        ],
-        "extensions": [
-          ".fx"
-        ],
+        "aliases": ["Fluxa"],
+        "extensions": [".fx"],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -32,9 +27,6 @@
     ]
   },
   "main": "./out/extension.js",
-  "activationEvents": [
-    "onLanguage:fluxa"
-  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

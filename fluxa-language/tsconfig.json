@@ -8,6 +8,7 @@
 			"ES2022",
 			"dom"
 		],
+		"outDir": "./out",
 		"sourceMap": true,
 		"rootDir": "src",
 		"strict": true

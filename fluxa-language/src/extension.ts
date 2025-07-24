@@ -8,17 +8,21 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	context.subscriptions.push(disposable);
 
-	const provider = vscode.languages.registerCompletionItemProvider('fluxa', {
-		provideCompletionItems(document, position, token, context) {
-			const keywords = ['print', 'func', 'def', 'if', 'else', 'for', 'while'];
+	const provider = vscode.languages.registerCompletionItemProvider(
+		{ language: 'fluxa', scheme: 'file' },
+		{
+			provideCompletionItems(document, position, token, context) {
+				const keywords = ['print', 'func', 'def', 'if', 'else', 'for', 'while'];
 
-			return keywords.map(kw => {
-				const item = new vscode.CompletionItem(kw, vscode.CompletionItemKind.Keyword);
-				item.insertText = kw;
-				return item;
-			});
-		}
-	}, '', '.'); // Trigger em qualquer tecla
+				return keywords.map(kw => {
+					const item = new vscode.CompletionItem(kw, vscode.CompletionItemKind.Keyword);
+					item.insertText = kw;
+					return item;
+				});
+			}
+		}, 
+		'', '.'
+	);
 	context.subscriptions.push(provider);
 }
 
